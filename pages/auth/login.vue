@@ -1,8 +1,8 @@
-<script setup>
+<script setup lang="ts">
 
   const { login:loginAction } = useSanctumAuth();
 
-  const form = reactive({
+  const form = reactive<LoginForm>({
     email: 'admin@amin.com',
     password: 'password'
   })
@@ -15,27 +15,23 @@
 <template>
   <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-      <h2
-          class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900"
-      >
+      <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
         Log in
       </h2>
     </div>
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
       <form class="space-y-6" @submit.prevent="login">
         <div>
-          <label
-              for="email"
-              class="block text-sm font-medium leading-6 text-gray-900"
-          >Email address</label
-          >
+          <label for="email" class="block text-sm font-medium leading-6 text-gray-900">
+            Email address
+          </label>
           <div class="mt-2">
             <input
                 v-model="form.email"
                 id="email"
                 name="email"
                 type="email"
-                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
           <p class="mt-2 text-sm text-red-600" id="email-error">Error</p>
@@ -52,7 +48,7 @@
                 id="password"
                 name="password"
                 type="password"
-                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                class="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
           <p class="mt-2 text-sm text-red-600" id="email-error">Error</p>
