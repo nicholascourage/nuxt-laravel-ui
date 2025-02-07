@@ -1,6 +1,9 @@
-<scipt setup lang="ts">
-
-</scipt>
+<script lang="ts" setup>
+  definePageMeta({
+    middleware: ['sanctum:auth'],
+    title: 'Dashboard'
+  });
+</script>
 
 <template>
   <div>Dashboard</div>
