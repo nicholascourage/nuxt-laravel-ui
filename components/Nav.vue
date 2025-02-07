@@ -1,8 +1,12 @@
 <script setup lang="ts">
 
-  const {isAuthenticated} = useSanctumAuth();
+  const {isAuthenticated, logout:logoutAction} = useSanctumAuth();
 
   const user = useSanctumUser<User>();
+
+  const logout = async () => {
+    await logoutAction();
+  }
 
 </script>
 
@@ -116,7 +120,7 @@
             </div>
             <div class="py-6">
               <div>
-                <button
+                <button @click="logout"
                     class="w-full text-left -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Log out
