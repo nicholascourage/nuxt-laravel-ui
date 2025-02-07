@@ -31,23 +31,10 @@
         </div>
       </div>
       <div class="flex lg:hidden">
-        <button
-            type="button"
-            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-        >
+        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
           <span class="sr-only">Open main menu</span>
-          <svg
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-          >
-            <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
           </svg>
         </button>
       </div>
@@ -59,23 +46,15 @@
           >
             {{ user.name }}
           </NuxtLink>
-          <button
-              @click="logout"
-              class="text-sm font-semibold leading-6 text-gray-900">
+          <button @click="logout" class="text-sm font-semibold leading-6 text-gray-900">
             Log out &rarr;
           </button>
         </div>
         <div v-if="!isAuthenticated">
-          <NuxtLink
-              to="/auth/login"
-              class="text-sm font-semibold leading-6 text-gray-900"
-          >
+          <NuxtLink to="/auth/login" class="text-sm font-semibold leading-6 text-gray-900">
             Log in &rarr;
           </NuxtLink>
-          <NuxtLink
-              to="/auth/register"
-              class="text-sm font-semibold leading-6 text-gray-900"
-          >
+          <NuxtLink to="/auth/register" class="text-sm font-semibold leading-6 text-gray-900">
             Register &rarr;
           </NuxtLink>
         </div>
