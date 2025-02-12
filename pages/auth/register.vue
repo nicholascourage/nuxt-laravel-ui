@@ -5,7 +5,9 @@ definePageMeta({
   title: 'Register'
 });
 
-const sanctumFetch = useSanctumClient();
+const {register: registerAction} = useAuth();
+
+const {refreshIdentity} = useSanctumAuth();
 
 const form = reactive<RegisterForm>({
   name: "",
@@ -14,12 +16,13 @@ const form = reactive<RegisterForm>({
   password_confirmation: ""
 })
 
-const register = async () => {
-  await sanctumFetch("/register", {
-    method: "POST",
-    body: form
-  });
+const register = async () =>{
+  await registerAction(form);
+  await refreshIdentity();
+  await navigateTo("/dashboard");
+
 }
+
 
 </script>
 
