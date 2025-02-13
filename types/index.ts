@@ -18,4 +18,10 @@ declare global{
         password: string;
         password_confirmation: string;
     }
+
+    interface ProfileForm{
+        name: string;
+        email: string;
+    }
+
 }
